@@ -463,7 +463,7 @@
  * The fan turns on automatically whenever any driver is enabled and turns
  * off (or reduces to idle speed) shortly after drivers are turned off.
  */
-//#define USE_CONTROLLER_FAN
+#define USE_CONTROLLER_FAN
 #if ENABLED(USE_CONTROLLER_FAN)
   //#define CONTROLLER_FAN_PIN -1        // Set a custom pin for the controller fan
   //#define CONTROLLER_FAN_USE_Z_ONLY    // With this option only the Z axis is considered
@@ -472,7 +472,7 @@
   #define CONTROLLERFAN_SPEED_ACTIVE 255 // (0-255) Active speed, used when any motor is enabled
   #define CONTROLLERFAN_SPEED_IDLE     0 // (0-255) Idle speed, used when motors are disabled
   #define CONTROLLERFAN_IDLE_TIME     60 // (seconds) Extra time to keep the fan running after disabling motors
-  //#define CONTROLLER_FAN_EDITABLE      // Enable M710 configurable settings
+  #define CONTROLLER_FAN_EDITABLE      // Enable M710 configurable settings
   #if ENABLED(CONTROLLER_FAN_EDITABLE)
     #define CONTROLLER_FAN_MENU          // Enable the Controller Fan submenu
   #endif
@@ -1374,7 +1374,7 @@
     #define SDSORT_USES_RAM    true   // Pre-allocate a static array for faster pre-sorting.
     #define SDSORT_USES_STACK  false  // Prefer the stack for pre-sorting to give back some SRAM. (Negated by next 2 options.)
     #define SDSORT_CACHE_NAMES true   // Keep sorted items in RAM longer for speedy performance. Most expensive option.
-    #define SDSORT_DYNAMIC_RAM true   // Use dynamic allocation (within SD menus). Least expensive option. Set SDSORT_LIMIT before use!
+    #define SDSORT_DYNAMIC_RAM flase   // Use dynamic allocation (within SD menus). Least expensive option. Set SDSORT_LIMIT before use!
     #define SDSORT_CACHE_VFATS 2      // Maximum number of 13-byte VFAT entries to use for sorting.
                                       // Note: Only affects SCROLL_LONG_FILENAMES with SDSORT_CACHE_NAMES but not SDSORT_DYNAMIC_RAM.
   #endif
@@ -1499,7 +1499,7 @@
  * By default an onboard SD card reader may be shared as a USB mass-
  * storage device. This option hides the SD card from the host PC.
  */
-#define NO_SD_HOST_DRIVE   // Disable SD Card access over USB (for security).
+// #define NO_SD_HOST_DRIVE   // Disable SD Card access over USB (for security).
 
 /**
  * Additional options for Graphical Displays
@@ -2144,7 +2144,7 @@
  * Currently handles M108, M112, M410, M876
  * NOTE: Not yet implemented for all platforms.
  */
-//#define EMERGENCY_PARSER
+#define EMERGENCY_PARSER
 
 /**
  * Realtime Reporting (requires EMERGENCY_PARSER)
@@ -2673,22 +2673,22 @@
    * Set *_SERIAL_TX_PIN and *_SERIAL_RX_PIN to match for all drivers
    * on the same serial port, either here or in your board's pins file.
    */
-#define X_SLAVE_ADDRESS 0
-#define Y_SLAVE_ADDRESS 2
-#define Z_SLAVE_ADDRESS 1
-#define X2_SLAVE_ADDRESS 0
-#define Y2_SLAVE_ADDRESS 0
-#define Z2_SLAVE_ADDRESS 0
-#define Z3_SLAVE_ADDRESS 0
-#define Z4_SLAVE_ADDRESS 0
-#define E0_SLAVE_ADDRESS 3
-#define E1_SLAVE_ADDRESS 0
-#define E2_SLAVE_ADDRESS 0
-#define E3_SLAVE_ADDRESS 0
-#define E4_SLAVE_ADDRESS 0
-#define E5_SLAVE_ADDRESS 0
-#define E6_SLAVE_ADDRESS 0
-#define E7_SLAVE_ADDRESS 0
+  #define  X_SLAVE_ADDRESS 0	
+  #define  Y_SLAVE_ADDRESS 2	
+  #define  Z_SLAVE_ADDRESS 1	
+  //#define X2_SLAVE_ADDRESS 0	
+  //#define Y2_SLAVE_ADDRESS 0	
+  //#define Z2_SLAVE_ADDRESS 0	
+  //#define Z3_SLAVE_ADDRESS 0	
+  //#define Z4_SLAVE_ADDRESS 0	
+  #define E0_SLAVE_ADDRESS 3	
+  //#define E1_SLAVE_ADDRESS 0	
+  //#define E2_SLAVE_ADDRESS 0	
+  //#define E3_SLAVE_ADDRESS 0	
+  //#define E4_SLAVE_ADDRESS 0	
+  //#define E5_SLAVE_ADDRESS 0	
+  //#define E6_SLAVE_ADDRESS 0	
+  //#define E7_SLAVE_ADDRESS 0
 
   /**
    * Software enable
